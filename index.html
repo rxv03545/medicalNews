@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>m3.com ニュースまとめ（救急 / 神経 / 内科 / AI）</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa6b2; --accent:#38bdf8;
+      --glass: rgba(255,255,255,0.03);
+    }
+    body{
+      background: linear-gradient(180deg,#071022 0%,#0b1230 60%);
+      color:#e6eef6; font-family: "Helvetica Neue", Arial, sans-serif;
+      margin:0; padding:24px;
+    }
+    .container{ max-width:1000px; margin:0 auto; }
+    header{
+      display:flex; align-items:center; gap:16px;
+      margin-bottom:18px;
+    }
+    header .logo{
+      width:64px; height:64px; border-radius:12px;
+      background:linear-gradient(135deg,#0ea5e9,#60a5fa);
+      display:flex; align-items:center; justify-content:center;
+      font-weight:700; color:#042f47; box-shadow:0 6px 18px rgba(0,0,0,0.6);
+    }
+    header h1{ margin:0; font-size:20px; letter-spacing:0.2px; }
+    header p{ margin:0; color:var(--muted); font-size:13px; }
+
+    .grid{
+      display:grid; grid-template-columns:repeat(2,1fr); gap:18px;
+    }
+    @media (max-width:800px){ .grid{ grid-template-columns:1fr; } }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03);
+      padding:14px; border-radius:12px; box-shadow:0 8px 30px rgba(2,6,23,0.6);
+    }
+    .card h2{ margin:0 0 8px 0; font-size:16px; color:var(--accent); display:flex; align-items:center; gap:8px;}
+    .card ul{ list-style:none; padding:0; margin:0; }
+    .card li{
+      padding:10px; margin-bottom:8px; background:var(--glass); border-radius:8px;
+      display:flex; gap:12px; align-items:flex-start;
+    }
+    .meta{ color:var(--muted); font-size:12px; margin-top:6px; }
+    .title-link{ color:#e6f8ff; text-decoration:none; font-weight:600; }
+    .title-link:hover{ text-decoration:underline; color:#ffffff; }
+    .section-actions{ display:flex; gap:8px; margin-top:10px; }
+    .btn{
+      background:transparent; border:1px solid rgba(255,255,255,0.06);
+      padding:6px 10px; border-radius:8px; color:var(--muted); font-size:13px;
+    }
+    footer{ margin-top:18px; color:var(--muted); font-size:13px; text-align:center; }
+    .badge{ font-size:11px; color:var(--muted); padding:4px 8px; border-radius:999px; border:1px solid rgba(255,255,255,0.03); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">m3</div>
+      <div>
+        <h1>m3.com ニュース（救急・神経・内科・AI）</h1>
+        <p>m3.com の最近の関連記事をカテゴリ別にまとめました。記事タイトルをクリックすると m3 の記事へ移動します（別タブ）。</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- 救急 -->
+      <section class="card" id="emergency">
+        <h2>救急（救急医療・救急隊関連） <span class="badge">最新</span></h2>
+        <ul>
+          <li>
+            <div>
+              <a class="title-link" href="https://www.m3.com/news/open/iryoishin/1279644" target="_blank" rel="noopener">救急隊員が病院内で休憩、医療者の大半が賛成</a>
+              <div class="meta">2025-06-22 — 長崎市消防局の取り組みが話題に。</div>
+            </div>
+          </li>
+
+          <li>
+            <div>
+              <a class="title-link" href="https://www.m3.com/news/open/iryoishin/1289532" target="_blank" rel="noopener">迷走の夏？ 救急医、医師国家試験予備校の講師になる</a>
+              <div class="meta">2025-08-11 — 救急医のキャリアや現場の実情を伝えるオピニオン。</div>
+            </div>
+          </li>
+
+          <li>
+            <div>
+              <a class="title-link" href="https://www.m3.com/news/open/iryoishin/1275192" target="_blank" rel="noopener">新幹線で急病人、乗り合わせた救急医は</a>
+              <div class="meta">2025-05-31 — 乗り合わせ医の対応経験談（オピニオン）。</div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 神経 -->
+      <section class="card" id="neuro">
+        <h2>神経（脳・神経科）</h2>
+        <ul>
+          <li>
+            <div>
+              <a class="title-link" href="https://www.m3.com/clinical/open/news/1264823" target="_blank" rel="noopener">海外ジャーナル年間TOP10 脳・神経科編</a>
+              <div class="meta">2025-03-29 — 2024年に脳・神経科で最も読まれた海外ジャーナル記事のまとめ。</div>
+            </div>
+          </li>
+
+          <li>
+            <div>
+              <a class="title-link" href="https://www.m3.com/clinical/news/128568
