@@ -1,6 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>医療ニュースまとめ</title>
+    <style>
+        body { font-family: sans-serif; background: #f7f7f7; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #ccc; padding: 24px; }
+        h1 { text-align: center; color: #2a5d84; }
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 18px; }
+        a { text-decoration: none; color: #1a4d8f; font-weight: bold; }
+        .source { font-size: 0.9em; color: #888; margin-left: 8px; }
+    </style>
+<head>
+<body>
+    <div class="container">
+        <h1>医療ニュースまとめ</h1>
+        <ul id="news-list">
+            <li>最新ニュースを取得中...</li>
+        </ul>
+    </div>
+    <script>
+    // RSS to JSON API（無料・要CORS回避）
+    const RSS_URL = 'https://news.google.com/rss/search?q=医療&hl=ja&gl=JP&ceid=JP:ja';
+    const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}`;
+
+    fetch(API_URL)
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById('news-list');
+        list.innerHTML = '';
+        if (data.items && data.items.length > 0) {
+          data.items.slice(0, 10).forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="${item.link}" target="_blank" rel="noopener">${item.title}</a> <span class="source">${item.author || ''}</span>`;
+            list.appendChild(li);
+          });
+        } else {
+          list.innerHTML = '<li>ニュースが取得できませんでした。</li>';
+        }
+      })
+      .catch(() => {
+        document.getElementById('news-list').innerHTML = '<li>ニュース取得時にエラーが発生しました。</li>';
+      });
+    </script>
+<body>
+<html>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>m3.com ニュースまとめ（救急 / 神経 / 内科 / AI）</title>
